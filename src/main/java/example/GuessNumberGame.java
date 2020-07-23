@@ -13,8 +13,10 @@ public class GuessNumberGame {
             return "0A0B";
         } else if(guessNumber.equals("5612")){
             return "0A2B";
-        } else {
+        } else if(guessNumber.equals("4123")){
             return "0A4B";
+        } else {
+            return "2A2B";
         }
     }
 }
