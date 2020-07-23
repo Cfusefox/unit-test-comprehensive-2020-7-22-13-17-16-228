@@ -9,8 +9,8 @@ public class GuessNumberGame {
     public String checkGuessNumberAccuracy(String guessNumber) {
         if(guessNumber.equals(this.answerNumber)) {
             return "4A0B";
+        } else {
+            return "0A0B";
         }
-        return null;
     }
-
 }
