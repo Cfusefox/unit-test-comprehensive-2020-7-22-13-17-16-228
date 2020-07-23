@@ -1,5 +1,7 @@
 package example;
 
+import java.util.ArrayList;
+
 public class GuessNumberGame {
     private String answerNumber;
     public GuessNumberGame(AnswerGenerate answerGenerate) {
@@ -21,10 +23,17 @@ public class GuessNumberGame {
         return accuracy;
     }
 
-    public Boolean checkAnswerStringIsValid(String answerNumber) {
-        if(answerNumber.equals("1234") || answerNumber.equals("4567")) {
-            return true;
+    public Boolean checkAnswerStringIsValid(String answerString) {
+        boolean answerStringIsRepeat = false;
+        ArrayList<Character> answerCharacterList = new ArrayList<>();
+        for(int i = 0; i < answerString.length(); i++) {
+            if(answerCharacterList.indexOf(answerString.charAt(i)) < 0) {
+                answerCharacterList.add(answerString.charAt(i));
+            } else {
+                answerStringIsRepeat = true;
+            }
         }
-        return false;
+        boolean ifValid = (answerString.length() == 4) && !answerStringIsRepeat;
+        return ifValid;
     }
 }
