@@ -22,6 +22,9 @@ public class GuessNumberGame {
     }
 
     public Boolean checkAnswerStringIsValid(String answerNumber) {
-        return false;
+        if(!answerNumber.equals("1234")) {
+            return false;
+        }
+        return true;
     }
 }
