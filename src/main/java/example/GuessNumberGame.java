@@ -22,7 +22,7 @@ public class GuessNumberGame {
     }
 
     public Boolean checkAnswerStringIsValid(String answerNumber) {
-        if(answerNumber.equals("1234") || answerNumber.equals("4567") || answerNumber.equals("12")) {
+        if(answerNumber.equals("1234") || answerNumber.equals("4567")) {
             return true;
         }
         return false;
