@@ -7,6 +7,9 @@ public class GuessNumberGame {
     }
 
     public String checkGuessNumberAccuracy(String guessNumber) {
+        if(guessNumber.equals(this.answerNumber)) {
+            return "4A0B";
+        }
         return null;
     }
 
