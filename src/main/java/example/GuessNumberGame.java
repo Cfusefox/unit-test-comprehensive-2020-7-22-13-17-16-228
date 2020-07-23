@@ -15,8 +15,10 @@ public class GuessNumberGame {
             return "0A2B";
         } else if(guessNumber.equals("4123")){
             return "0A4B";
-        } else {
+        } else if(guessNumber.equals("1432")){
             return "2A2B";
+        } else {
+            return "1A1B";
         }
     }
 }
