@@ -7,18 +7,17 @@ public class GuessNumberGame {
     }
 
     public String checkGuessNumberAccuracy(String guessNumber) {
-        if(guessNumber.equals(this.answerNumber)) {
-            return "4A0B";
-        } else if(guessNumber.equals("5678")){
-            return "0A0B";
-        } else if(guessNumber.equals("5612")){
-            return "0A2B";
-        } else if(guessNumber.equals("4123")){
-            return "0A4B";
-        } else if(guessNumber.equals("1432")){
-            return "2A2B";
-        } else {
-            return "1A1B";
+        int allCorrectCount = 0;
+        int numberCorrectCount = 0;
+        String accuracy = "";
+        for(int i = 0; i < this.answerNumber.length(); i++) {
+            if(this.answerNumber.charAt(i) == guessNumber.charAt(i)) {
+                allCorrectCount++;
+            } else if (guessNumber.indexOf(this.answerNumber.charAt(i)) >= 0) {
+                numberCorrectCount++;
+            }
         }
+        accuracy = accuracy + allCorrectCount + "A" + numberCorrectCount + "B";
+        return accuracy;
     }
 }
