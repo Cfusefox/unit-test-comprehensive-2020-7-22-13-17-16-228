@@ -20,4 +20,8 @@ public class GuessNumberGame {
         accuracy = accuracy + allCorrectCount + "A" + numberCorrectCount + "B";
         return accuracy;
     }
+
+    public Boolean checkAnswerStringIsValid(String answerNumber) {
+        return false;
+    }
 }

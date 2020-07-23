@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.BDDMockito.given;
 
 public class GuessNumberGameTest {
@@ -97,5 +98,22 @@ public class GuessNumberGameTest {
         //then
         assertEquals("1A1B", actual);
     }
+
+    @Test
+    void should_return_true_when_check_answer_string_is_valid_given_1234() {
+        //given
+        String answer = "1234";
+        AnswerGenerate mockedAnswerGenerate = Mockito.mock(AnswerGenerate.class);
+        given(mockedAnswerGenerate.generate()).willReturn("1234");
+
+        //when
+        GuessNumberGame guessNumberGame = new GuessNumberGame(mockedAnswerGenerate);
+        Boolean actual = guessNumberGame.checkAnswerStringIsValid(answer);
+
+        //then
+        assertTrue(actual);
+
+    }
+
 
 }
