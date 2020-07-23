@@ -36,4 +36,6 @@ public class GuessNumberGame {
         boolean ifValid = (answerString.length() == 4) && !answerStringIsRepeat;
         return ifValid;
     }
+
+
 }
