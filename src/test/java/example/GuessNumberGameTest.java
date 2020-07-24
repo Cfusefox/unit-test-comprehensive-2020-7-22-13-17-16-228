@@ -99,54 +99,6 @@ public class GuessNumberGameTest {
     }
 
     @Test
-    void should_return_true_when_check_answer_string_is_valid_given_1234() {
-        //given
-        String answer = "1234";
-        AnswerGenerate mockedAnswerGenerate = Mockito.mock(AnswerGenerate.class);
-        given(mockedAnswerGenerate.generate()).willReturn("1234");
-
-        //when
-        GuessNumberGame guessNumberGame = new GuessNumberGame(mockedAnswerGenerate);
-        Boolean actual = guessNumberGame.checkAnswerStringIsValid(answer);
-
-        //then
-        assertTrue(actual);
-
-    }
-
-    @Test
-    void should_return_true_when_check_answer_string_is_valid_given_4567() {
-        //given
-        String answer = "4567";
-        AnswerGenerate mockedAnswerGenerate = Mockito.mock(AnswerGenerate.class);
-        given(mockedAnswerGenerate.generate()).willReturn("1234");
-
-        //when
-        GuessNumberGame guessNumberGame = new GuessNumberGame(mockedAnswerGenerate);
-        Boolean actual = guessNumberGame.checkAnswerStringIsValid(answer);
-
-        //then
-        assertTrue(actual);
-
-    }
-
-    @Test
-    void should_return_false_when_check_answer_string_is_valid_given_12() {
-        //given
-        String answer = "12";
-        AnswerGenerate mockedAnswerGenerate = Mockito.mock(AnswerGenerate.class);
-        given(mockedAnswerGenerate.generate()).willReturn("1234");
-
-        //when
-        GuessNumberGame guessNumberGame = new GuessNumberGame(mockedAnswerGenerate);
-        Boolean actual = guessNumberGame.checkAnswerStringIsValid(answer);
-
-        //then
-        assertFalse(actual);
-
-    }
-
-    @Test
     void should_return_wrong_input_input_again_when_guess_number_game_given_2268_and_answer_number_is_1234() {
         //given
         String guessNumber = "2268";
