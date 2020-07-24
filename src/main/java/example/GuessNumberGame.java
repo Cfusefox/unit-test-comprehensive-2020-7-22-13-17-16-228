@@ -4,45 +4,34 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GuessNumberGame {
-    private String answerNumber;
+    private final String answerNumber;
 
     public GuessNumberGame(AnswerGenerate answerGenerate) {
         this.answerNumber = answerGenerate.generate();
     }
 
-    // todo create class and refactor
-    public void conductGame() {
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Input           Accuracy");
-        for(int i= 1 ;i <= 6; i++) {
-            String inputString = sc.nextLine();
-            String accuracy = checkGuessNumberAccuracy(inputString);
-            System.out.println(inputString + "           " + accuracy);
-            if(accuracy.equals("4A0B")) {
-                System.out.println("Win!");
-                break;
-            }
-        }
-        System.out.println("Failed!");
-    }
 
     public String checkGuessNumberAccuracy(String guessNumber) {
         if(checkAnswerStringIsValid(guessNumber)) {
-            int allCorrectCount = 0;
-            int numberCorrectCount = 0;
-            String accuracy = "";
-            for(int i = 0; i < this.answerNumber.length(); i++) {
-                if(this.answerNumber.charAt(i) == guessNumber.charAt(i)) {
-                    allCorrectCount++;
-                } else if (guessNumber.indexOf(this.answerNumber.charAt(i)) >= 0) {
-                    numberCorrectCount++;
-                }
-            }
-            accuracy = accuracy + allCorrectCount + "A" + numberCorrectCount + "B";
-            return accuracy;
+            return correctNumberCount(guessNumber);
         } else {
             return "Wrong Input，Input again";
         }
+    }
+
+    private String correctNumberCount(String guessNumber) {
+        int allCorrectCount = 0;
+        int numberCorrectCount = 0;
+        String accuracy = "";
+        for(int index = 0; index < this.answerNumber.length(); index++) {
+            if(this.answerNumber.charAt(index) == guessNumber.charAt(index)) {
+                allCorrectCount++;
+            } else if (guessNumber.indexOf(this.answerNumber.charAt(index)) >= 0) {
+                numberCorrectCount++;
+            }
+        }
+        accuracy = accuracy + allCorrectCount + "A" + numberCorrectCount + "B";
+        return accuracy;
     }
 
     public Boolean checkAnswerStringIsValid(String answerString) {
