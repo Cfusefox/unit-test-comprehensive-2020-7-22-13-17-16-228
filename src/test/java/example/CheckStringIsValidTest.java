@@ -49,4 +49,17 @@ public class CheckStringIsValidTest {
         assertFalse(actual);
 
     }
+
+    @Test
+    void should_return_false_when_check_answer_string_is_valid_given_abcd() {
+        //given
+        String answer = "abcd";
+
+        //when
+        CheckStringIsValid checkStringIsValid = new CheckStringIsValid();
+        Boolean actual = checkStringIsValid.checkAnswerStringIsValid(answer);
+
+        //then
+        assertFalse(actual);
+    }
 }
