@@ -10,7 +10,7 @@ public class AnswerStringGenerator implements AnswerGenerate{
         Random random = new Random();
         ArrayList<Integer> answerNumberList = new ArrayList<>();
         String answerString = "";
-        for(int i =0 ; i < 4; i++) {
+        while(answerNumberList.size() < 4) {
             int randomNumber = random.nextInt(10);
             if(answerNumberList.indexOf(randomNumber) <= 0) {
                 answerNumberList.add(randomNumber);
