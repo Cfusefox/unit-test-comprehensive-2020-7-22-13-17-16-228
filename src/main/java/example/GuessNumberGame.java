@@ -1,8 +1,5 @@
 package example;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class GuessNumberGame {
     private final String answerNumber;
 
@@ -10,9 +7,11 @@ public class GuessNumberGame {
         this.answerNumber = answerGenerate.generate();
     }
 
+
+
     public String checkGuessNumberAccuracy(String guessNumber) {
-        CheckStringIsValid checkStringIsValid = new CheckStringIsValid();
-        if(checkStringIsValid.checkAnswerStringIsValid(guessNumber)) {
+        CheckAnswerStringIsValid checkAnswerStringIsValid = new CheckAnswerStringIsValid();
+        if(checkAnswerStringIsValid.checkAnswerStringIsValid(guessNumber)) {
             return correctNumberCount(guessNumber);
         } else {
             return "Wrong Input，Input again";
