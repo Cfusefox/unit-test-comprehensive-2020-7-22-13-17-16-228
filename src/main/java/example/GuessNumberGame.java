@@ -19,7 +19,7 @@ public class GuessNumberGame {
             return WRONG_INPUT_INPUT_AGAIN;
         }
     }
-//todo rename
+
     private String generateGuessNumberAccuracyString(String guessNumber) {
         int allCorrectCount = 0;
         int numberCorrectCount = 0;
