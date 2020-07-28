@@ -9,14 +9,15 @@ public class AnswerStringGenerator implements AnswerGenerate{
     public String generate() {
         Random random = new Random();
         ArrayList<Integer> answerNumberList = new ArrayList<>();
-        String answerString = "";
+        //todo rename contract constant
+        StringBuilder answerString = new StringBuilder();
         while(answerNumberList.size() < 4) {
             int randomNumber = random.nextInt(10);
             if(answerNumberList.indexOf(randomNumber) <= 0) {
                 answerNumberList.add(randomNumber);
-                answerString += randomNumber;
+                answerString.append(randomNumber);
             }
         }
-        return answerString;
+        return answerString.toString();
     }
 }
