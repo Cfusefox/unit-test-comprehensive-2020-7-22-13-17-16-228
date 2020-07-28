@@ -14,13 +14,13 @@ public class GuessNumberGame {
     public String checkGuessNumberAccuracy(String guessNumber) {
         CheckAnswerStringIsValid checkAnswerStringIsValid = new CheckAnswerStringIsValid();
         if (checkAnswerStringIsValid.checkAnswerStringIsValid(guessNumber)) {
-            return correctNumberCount(guessNumber);
+            return generateGuessNumberAccuracyString(guessNumber);
         } else {
             return WRONG_INPUT_INPUT_AGAIN;
         }
     }
 //todo rename
-    private String correctNumberCount(String guessNumber) {
+    private String generateGuessNumberAccuracyString(String guessNumber) {
         int allCorrectCount = 0;
         int numberCorrectCount = 0;
         String accuracy = "";
